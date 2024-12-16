@@ -10,7 +10,8 @@ userForm.loginFormCallback = function(data) {
             // Обновляем страницу после успешной авторизации
             location.reload();
         } else {
-            alert('Ошибка авторизации');
+            const errorElement = document.getElementById("login-error-message");
+            errorElement.textContent = response.error.message || 'Неизвестная ошибка авторизации';
         }
     });
 };
@@ -24,7 +25,8 @@ userForm.registerFormCallback = function(data) {
             // Обновляем страницу после успешной регистрации
             location.reload();
         } else {
-            alert('Ошибка регистрации');
+            const errorElement = document.getElementById("register-error-message");
+            errorElement.textContent = response.error.message || 'Неизвестная ошибка регистрации';
         }
     });
 };

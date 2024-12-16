@@ -25,7 +25,7 @@ ApiConnector.current(function(response) {
 const ratesBoard = new RatesBoard();
 
 function updateRates() {
-    ApiConnector.rates(function(response) {
+    ApiConnector.getRates(function(response) {
         if (response.success) {
             ratesBoard.clearTable();
             ratesBoard.fillTable(response.data);
